@@ -13,14 +13,12 @@
     </ion-toolbar>
   </ion-header>
 
- <ion-button (click)="selecionarOpcao('prioridade')">Prioridade</ion-button>
+  <ion-button (click)="selecionarOpcao('prioridade')">Prioridade</ion-button>
   <ion-button (click)="selecionarOpcao('exames')">Exames</ion-button>
   <ion-button (click)="selecionarOpcao('geral')">Geral</ion-button>
 
   <h1>Senhas</h1>
-  <p *ngIf="globalService.ultimoObjetoCriado">Objeto criado está presente</p>
-
-  
+  <p *ngIf="globalService.ultimoObjetoCriado">Último objeto criado: {{ globalService.ultimoObjetoCriado.valor }}</p>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
