@@ -16,16 +16,15 @@ export class GlobalService {
   public objetosCriados: ObjetoCriado[] = [];
   public todosObjetos: ObjetoCriado[] = [];
   private contadores: { [key: string]: number } = {};
+  public ultimoObjetoCriado: ObjetoCriado | null = null;
 
   constructor() { }
   
   criarObjetoComContador(tipo: string): void {
-    // Se o contador para o tipo ainda não existe, inicialize-o com 1
     if (!this.contadores[tipo]) {
       this.contadores[tipo] = 1;
     }
 
-    // Concatena 'SP', 'SE' ou 'SG' antes do valor do contador, dependendo do tipo
     const prefixo: string = this.obterPrefixoPorTipo(tipo);
     const novoObjeto: ObjetoCriado = {
       valor: `${prefixo}${this.contadores[tipo]}`,
@@ -34,8 +33,8 @@ export class GlobalService {
 
     this.objetosCriados.push(novoObjeto);
     this.todosObjetos.push(novoObjeto);
+    this.ultimoObjetoCriado = novoObjeto;
 
-    // Incrementa o contador para o tipo
     this.contadores[tipo]++;
 
     this.mostrarTodosObjetosNoConsole();
