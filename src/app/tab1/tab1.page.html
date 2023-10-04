@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Gerar senhas
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,6 +12,12 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
+
+ <ion-button (click)="selecionarOpcao('prioridade')">Prioridade</ion-button>
+  <ion-button (click)="selecionarOpcao('exames')">Exames</ion-button>
+  <ion-button (click)="selecionarOpcao('geral')">Geral</ion-button>
+
+  <h1>Senhas</h1>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
