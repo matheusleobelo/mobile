@@ -2,7 +2,7 @@
 
 import { Injectable } from '@angular/core';
 
-interface ObjetoCriado {
+export interface ObjetoCriado {
   valor: string;
   tipo: string;
 }
